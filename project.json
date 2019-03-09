@@ -1,0 +1,20 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "sports-slider"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": "2019/sports/earl-thomas-seahawks-top-plays"
+    }
+  },
+  "title": "Remembering E.T.: The top plays of Earl Thomas' Seahawks career",
+  "description": "The Legion of Boom era is officially over. These were Earl Thomas' most memorable plays along the way.",
+  "url": "https://projects.seattletimes.com/2019/sports/earl-thomas-seahawks-top-plays/",
+  "slug": "earl-thomas-seahawks-top-plays",
+  "tags": ["interactive", "parallax"],
+  "image": "./assets/earl-thomas-moments-tzr.gif",
+  "production": true,
+  "sheets": ["11dulQu8HTAnKUr4etCokWEO8b1bDWfNvL8_5KOWWI7U"]
+}

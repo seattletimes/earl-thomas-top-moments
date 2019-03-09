@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oswald|Open+Sans:600,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_adHead.html", json.project) %>
+  </head>
+  <body>
+
+    <div class="fixed-frame"></div>
+
+    <main class="scroll">
+
+      <div class="ad-spot">
+        <%= t.include("partials/_ad.html", { type: "banner" }) %>
+      </div>
+      <header class="intro">
+        <nav class="logo-bar">
+          <a class="logo" href="http://seattletimes.com">
+            <img src="./assets/st-logo.png">
+          </a>
+        </nav>
+
+        <div class="contents">
+
+          <h1><%= json.project.title %></h1>
+
+          <p>Has any elite Seattle pro athlete ever had a longer goodbye than Earl Thomas?
+          <p>It feels like the day when he would officially become an ex-Seahawk has been building since Christmas Eve 2017, when he infamously approached Cowboys coach Jason Garrett outside the Dallas locker room and told him to <a href="https://www.seattletimes.com/sports/seahawks/earl-thomas-to-cowboys-when-seattle-kicks-me-to-the-curb-come-get-me/" target="_blank">“come get me”</a> once the Seahawks kicked him to the curb.
+          <p>That day has finally arrived.
+          <p>But despite the often messy (Thomas telling the Seahawks they are <a href="https://www.seattletimes.com/sports/seahawks/that-was-the-worst-possible-way-seahawks-all-pro-safety-earl-thomas-could-have-gone-out/" target="_blank">number one in his heart</a> as he was carted off the field at Arizona) and far-too-drawn-out ending, Thomas will always be a Seahawk.
+          <p>He finishes his Seattle career with six Pro Bowl nods, tied with Russell Wilson for fourth-most in a Seahawks uniform behind three players who all have since made the Hall of Fame — Walter Jones, Cortez Kennedy and Steve Largent. Thomas was also named a first team All-Pro three times, behind only Jones and Bobby Wagner, who each have four as Seahawks.
+          <p>As we say a final goodbye to Thomas, a look back at his five most memorable plays as a Seahawk.
+
+          <div class="social">
+            <a class="share"></a>
+          </div>
+
+          <p class="byline">
+            <span class="byline-name">By Bob Condotta and Evan Webeck / The Seattle Times</span>
+          </p>
+
+          <p class="instructions">
+            <i class="fa fa-chevron-down"></i>
+            Scroll to continue
+            <i class="fa fa-chevron-down"></i>
+
+        </div>
+
+      </header>
+
+    <% json.photos.sort(function(a, b) { return a.order - b.order }).forEach(function(item, i) { %>
+      <%= t.include("_details.html", { item: item, index: i }) %>
+    <% }) %>
+
+      <footer>
+        <a class="logo" href="http://seattletimes.com">
+          <img src="./assets/st-logo.png">
+        </a>
+        <a class="share-bottom"></a>
+      </footer>
+
+    </main>
+
+    <aside class="no-mobile-portrait">
+      <a class="ok" href="javascript:;">
+        <i class="fa fa-times-circle-o"></i>
+      </a>
+      Hey! This page is designed to look best in landscape mode. Rotate your device to see for yourself.
+      <i class="fa fa-rotate-left rotation"></i>
+    </aside>
+
+    <script src="app.js"></script>
+    <%= t.include("partials/_adFoot.html") %>
+    <%= t.include("partials/_workHere.html") %>
+  </body>
+</html>
